@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+#main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: transparent;
+    z-index: 10;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between; /* This aligns the logo on the left and nav + social media on the right */
+    align-items: center; /* This centers items vertically */
+    padding: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* This centers the .container within the header */
+}
+
+#main-nav {
+    display: flex;
+    justify-content: center; /* This will center the navigation links horizontally */
+    align-items: center;
+    flex: 1; /* This will allow the nav to take up the available space */
+}
+
+#main-header h1, #main-header nav a {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: white;
+    transition: color 0.3s;
+}
+
+#main-header:hover {
+    background-color: #fff;
+}
+
+h1, h2, h3, p {
+    font-weight: 400;
+}
+
+#main-header:hover h1, 
+#main-header:hover nav a {
+    color: black;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0 1rem;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    padding: 0 0.5rem;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+#hero {
+    min-height: 100vh;
+    background: url('photos/free.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+#about {
+    padding: 4rem 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#about .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about h2, #about p {
+    margin-bottom: 1rem;
+}
+
+#profiles .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* This will spread out the profiles evenly */
+    align-items: flex-start; /* Aligns items to the top of the container */
+}
+
+.profile {
+    text-align: center;
+    flex-basis: calc(50% - 40px); /* Adjust the width of each profile based on the desired size of the images */
+    box-sizing: border-box;
+    padding: 20px; /* Add padding to give content some breathing room */
+    margin: 20px; /* Add margin to create space between profiles */
+}
+
+.profile img {
+    width: 100%; /* Make the image responsive */
+    max-width: 300px; /* Set a fixed width */
+    height: 300px; /* Set height equal to width to force a square */
+    object-fit: cover;
+    border-radius: 0; /* No rounded corners */
+    display: block;
+    margin: 0 auto 10px; /* Center and add margin at the bottom */
+}
+
+.profile h3, .profile p {
+    color: black;
+}
+
+.profile p.bio {
+    font-size: 0.9em;
+    color: #333;
+}
+
+footer {
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    padding-top: 4rem;
+}
+
+
+
+#main-header.scrolled {
+    background-color: #fff; /* White background */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#main-header.scrolled h1,
+#main-header.scrolled nav a {
+    color: black; /* Black text color */
+    transition: color 0.3s;
+}
