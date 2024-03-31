@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var hero = document.getElementById('hero');
     var images = [
-        'url(photos/free.jpg)',
+        'url(https://github.com/charlesliu04/Lumia/blob/main/photos/free.jpg?raw=true)',
         
         
     ];
