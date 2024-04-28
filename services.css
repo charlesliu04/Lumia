@@ -132,7 +132,7 @@ main {
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    min-height: 550px; /* Use min-height to allow boxes to grow */
+    min-height: 600px; /* Use min-height to allow boxes to grow */
     margin-bottom: 2rem; /* Add bottom margin for spacing between rows */
     box-sizing: border-box; /* Include padding in the box's dimensions */
 }
