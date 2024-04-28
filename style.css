@@ -365,3 +365,9 @@ main {
     margin-bottom: 0.5rem; /* Space between icon and title */
     display: block; /* Makes sure the image is a block-level element */
 }
+
+.service-item:hover .service-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
