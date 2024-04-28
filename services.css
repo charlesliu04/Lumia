@@ -132,7 +132,7 @@ main {
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    height: 400px; /* Fixed height for all service items */
+    height: 550px; /* Fixed height for all service items */
 }
 
 .service-icon {
