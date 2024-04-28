@@ -358,3 +358,10 @@ main {
 .service-item h3 {
     color: #003366; /* Apply the same dark blue color to all h3 elements within service-item */
 }
+
+.service-item .service-icon {
+    width: 48px; /* Adjust as necessary */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 0.5rem; /* Space between icon and title */
+    display: block; /* Makes sure the image is a block-level element, can also use inline-block */
+}
