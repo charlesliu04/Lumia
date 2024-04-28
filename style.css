@@ -360,8 +360,8 @@ main {
 }
 
 .service-item .service-icon {
-    width: 24px; /* Adjust as necessary */
-    height: auto; /* Maintains aspect ratio */
+    width: 24px !important; /* Forces the width, even if other styles have higher specificity */
+    height: auto; /* Maintains the aspect ratio */
     margin-bottom: 0.5rem; /* Space between icon and title */
-    display: block; /* Makes sure the image is a block-level element, can also use inline-block */
+    display: block; /* Makes sure the image is a block-level element */
 }
