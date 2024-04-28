@@ -126,14 +126,17 @@ main {
 .service-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space evenly */
+    justify-content: space-between; /* This will keep the header and button at opposite ends */
     background-color: #f4f4f4;
-    padding: 1rem;
+    padding: 2rem; /* Adjust padding to give more space inside the box */
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    height: 550px; /* Fixed height for all service items */
+    min-height: 550px; /* Use min-height to allow boxes to grow */
+    margin-bottom: 2rem; /* Add bottom margin for spacing between rows */
+    box-sizing: border-box; /* Include padding in the box's dimensions */
 }
+
 
 .service-icon {
     max-width: 50px; /* Adjust this value to make the image smaller */
@@ -147,14 +150,13 @@ main {
 }
 
 .service-item p {
-    width: 80%; /* Adjust the width as needed */
-    margin-left: auto; /* Centers the paragraph block */
-    margin-right: auto; /* Centers the paragraph block */
-    padding-left: 10px; /* Left padding */
-    padding-right: 10px; /* Right padding */
-    text-align: left; /* Aligns the text to the left */
-    box-sizing: border-box; /* Ensures that padding is included in the width */
+    width: 80%; /* Decrease this percentage to add more space on the sides */
+    margin: 1rem auto; /* Center the paragraph and add top and bottom margin */
+    padding: 0 1rem; /* Increase padding for a larger indent */
+    text-align: left;
+    box-sizing: border-box;
 }
+
 
 .learn-more-btn {
     align-self: center; /* Center button horizontally */
