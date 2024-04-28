@@ -87,3 +87,20 @@ function changeWelcomeMessage() {
         currentLanguageIndex = (currentLanguageIndex + 1) % welcomeMessages.length;
     }, 500); // Match this with the CSS transition duration
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var serviceItems = document.querySelectorAll('.service-item');
+
+  serviceItems.forEach(function(item) {
+      item.addEventListener('mouseenter', function() {
+          var icon = item.querySelector('.service-icon');
+          icon.classList.add('icon-hide');
+      });
+
+      item.addEventListener('mouseleave', function() {
+          var icon = item.querySelector('.service-icon');
+          icon.classList.remove('icon-hide');
+      });
+  });
+});
