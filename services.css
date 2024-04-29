@@ -126,15 +126,48 @@ main {
 .service-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This will keep the header and button at opposite ends */
+    justify-content: space-between; /* Space out items */
     background-color: #f4f4f4;
-    padding: 2rem; /* Adjust padding to give more space inside the box */
+    padding: 2rem;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     transition: transform 0.3s ease-in-out;
-    min-height: 600px; /* Use min-height to allow boxes to grow */
-    margin-bottom: 2rem; /* Add bottom margin for spacing between rows */
-    box-sizing: border-box; /* Include padding in the box's dimensions */
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    height: 100%; /* Set a height to fill container */
+}
+
+.service-item h3 {
+    align-self: center; /* Center the title horizontally */
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+.service-item p {
+    align-self: start; /* Align paragraph to the start */
+    width: 100%; /* Paragraph takes full width */
+    margin-bottom: 2rem; /* Space above the 'Learn More' button */
+}
+
+.learn-more-btn {
+    align-self: center; /* Center the button horizontally */
+    margin-top: auto; /* Push the button to the bottom */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: 1px solid transparent; /* Sleek border style */
+    padding: 0.3rem 0.6rem; /* Minimal padding for a very small button */
+    font-size: 0.75rem; /* Smaller font size */
+    border-radius: 20px; /* Soft rounded edges for small button */
+    cursor: pointer; /* Cursor indicates a clickable button */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.5px; /* Maintain letter spacing */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Smaller shadow for a subtle effect */
+}
+
+.learn-more-btn:hover, .learn-more-btn:focus {
+    background-color: #0056b3; /* Darker blue on hover/focus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slightly larger shadow for hover/focus */
+    transform: translateY(-1px); /* Subtle lift on hover/focus */
 }
 
 
@@ -145,33 +178,7 @@ main {
     display: block; /* Ensures the image is a block-level element */
 }
 
-.service-item h3 {
-    margin-bottom: 0.5rem; /* Space below the title */
-}
 
-.service-item p {
-    width: 80%; /* Decrease this percentage to add more space on the sides */
-    margin: 1rem auto; /* Center the paragraph and add top and bottom margin */
-    padding: 0 1rem; /* Increase padding for a larger indent */
-    text-align: left;
-    box-sizing: border-box;
-}
-
-
-.learn-more-btn {
-    align-self: center; /* Center button horizontally */
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.learn-more-btn:hover {
-    background-color: #0056b3;
-}
 
 .service-details {
     display: none;
