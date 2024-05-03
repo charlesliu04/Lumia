@@ -371,3 +371,28 @@ main {
     transition: opacity 0.3s ease-in-out;
 }
 
+#mentee-landings {
+    background-color: #fff; 
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#mentee-landings h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+    gap: 1rem;
+}
+
+.logo-grid img {
+    width: 120px; 
+    height: 80px;
+    object-fit: contain;
+}
+
