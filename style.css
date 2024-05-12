@@ -396,3 +396,52 @@ main {
     object-fit: contain;
 }
 
+@media (max-width: 768px) {
+    body, html {
+        font-size: 14px; /* Adjust base font size for better legibility */
+    }
+
+    .services-container,
+    #about .container,
+    #hero .container {
+        padding: 0 10px; /* Reduce padding on smaller screens */
+    }
+
+    #main-header .container {
+        padding: 0 2px; /* Minimize side padding */
+        display: flex;
+        align-items: center; /* Align items centrally in the header */
+        justify-content: space-between; /* Distribute space evenly between elements */
+    }
+
+    #main-nav {
+        display: flex;
+        justify-content: space-between; /* Adjust layout to evenly distribute space */
+        align-items: center;
+        flex-grow: 1; /* Let navigation use available space */
+        margin: 0; /* No additional margin to maximize space */
+    }
+
+    #main-nav a {
+        margin: 0 2px; /* Reduce the horizontal margin to bring links closer */
+        padding: 8px 2px; /* Adjust padding to maintain tappable areas while reducing width */
+        min-width: auto; /* Allow link width to naturally adjust based on content and space */
+        text-align: center; /* Center the text within each link */
+        white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
+    }
+
+    #welcome-text {
+        font-size: 3em; /* Increase font size for smaller screens */
+    }
+
+    #hero .hero-content {
+        font-size: 0.75em; /* Increase font size for smaller screens */
+    }
+
+    .mission-column {
+        width: 45%; /* Increase width to keep columns side by side longer */
+        margin-top: 1rem;
+    }
+   
+  
+}
