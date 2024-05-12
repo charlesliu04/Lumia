@@ -193,3 +193,61 @@ footer {
     padding: 1rem 0;
     font-size: 0.6em;
 }
+
+@media (max-width: 768px) {
+    body, html {
+        font-size: 14px; /* Adjust base font size for better legibility */
+    }
+
+    #main-header .container {
+        padding: 0 2px; /* Minimize side padding */
+        display: flex;
+        align-items: center; /* Align items centrally in the header */
+        justify-content: space-between; /* Distribute space evenly between elements */
+    }
+
+    #main-nav {
+        display: flex;
+        justify-content: space-between; /* Adjust layout to evenly distribute space */
+        align-items: center;
+        flex-grow: 1; /* Let navigation use available space */
+        margin: 0; /* No additional margin to maximize space */
+    }
+
+    #main-nav a {
+        margin: 0 2px; /* Reduce the horizontal margin to bring links closer */
+        padding: 8px 2px; /* Adjust padding to maintain tappable areas while reducing width */
+        min-width: auto; /* Allow link width to naturally adjust based on content and space */
+        text-align: center; /* Center the text within each link */
+        white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
+    }
+
+
+    .section-header {
+        font-size: 1.5rem; /* Larger font size for readability */
+    }
+
+    .service-list {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack services in a single column */
+        gap: 10px; /* Reduce gap to save space */
+    }
+
+    .service-item {
+        padding: 10px; /* Reduce padding inside service items */
+        font-size: 0.8rem; /* Adjust font size for readability */
+    }
+
+    .learn-more-btn {
+        padding: 0.5rem; /* Increase padding for easier interaction */
+        font-size: 1rem; /* Increase font size for visibility */
+    }
+
+    .intro-text {
+        padding: 0 20px; /* Adds horizontal padding to prevent text from spanning side to side */
+        text-align: center; /* Ensures the text is centered, maintaining a tidy layout */
+        font-size: 1rem; /* Adjusts font size for better readability on small screens */
+    }
+}
+
+
