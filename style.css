@@ -442,6 +442,16 @@ main {
         width: 45%; /* Increase width to keep columns side by side longer */
         margin-top: 1rem;
     }
-   
+    
+   .logo-grid {
+        padding: 0 20px; /* Adds horizontal padding to prevent logos from touching the screen edges */
+        justify-content: center; /* Ensures logos remain centered despite the padding */
+    }
+
+    .logo-grid img {
+        width: 100px; /* Optionally adjust the size of the logos if necessary */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px; /* Ensure some space between logos for better separation */
+    }
   
 }
