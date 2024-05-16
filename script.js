@@ -104,3 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+
+function toggleDetails(id) {
+  var element = document.getElementById(id);
+  if (element.classList.contains('visible')) {
+      element.classList.remove('visible');
+  } else {
+      element.classList.add('visible');
+  }
+}
