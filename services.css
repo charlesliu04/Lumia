@@ -148,6 +148,26 @@ main {
     margin-bottom: 2rem; /* Space above the 'Learn More' button */
 }
 
+.service-icon {
+    max-width: 50px; /* Adjust this value to make the image smaller */
+    height: auto; /* Maintains the aspect ratio */
+    margin: 0 auto; /* Centers the image horizontally */
+    display: block; /* Ensures the image is a block-level element */
+}
+
+.service-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    padding: 0 100px;
+    opacity: 0;
+}
+.service-details.visible {
+    max-height: 200px; 
+    padding-top: 10vh;
+    opacity: 1;
+}
+
 .learn-more-btn {
     align-self: center; /* Center the button horizontally */
     margin-top: auto; /* Push the button to the bottom */
@@ -171,20 +191,6 @@ main {
 }
 
 
-.service-icon {
-    max-width: 50px; /* Adjust this value to make the image smaller */
-    height: auto; /* Maintains the aspect ratio */
-    margin: 0 auto; /* Centers the image horizontally */
-    display: block; /* Ensures the image is a block-level element */
-}
-
-
-
-.service-details {
-    display: none;
-    margin-top: 1rem;
-    text-align: left;
-}
 
 footer {
     background: #ffffff;
