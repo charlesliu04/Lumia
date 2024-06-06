@@ -113,8 +113,8 @@ main {
 }
 
 .service-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 2rem 0;
 }
@@ -134,7 +134,8 @@ main {
     transition: transform 0.3s ease-in-out;
     margin-bottom: 2rem;
     box-sizing: border-box;
-    height: 100%; /* Set a height to fill container */
+    flex: 1;
+    min-width: 300px; /* Ensure all items have the same minimum width */
 }
 
 .service-item h3 {
@@ -143,6 +144,7 @@ main {
 }
 
 .service-item p {
+    flex-grow: 1; /* Make the paragraph take up remaining space */
     align-self: start; /* Align paragraph to the start */
     width: 100%; /* Paragraph takes full width */
     margin-bottom: 2rem; /* Space above the 'Learn More' button */
@@ -203,7 +205,6 @@ footer {
 }
 
 
-
 @media (max-width: 768px) {
     body, html {
         font-size: 14px; /* Adjust base font size for better legibility */
@@ -259,6 +260,12 @@ footer {
         font-size: 1rem; /* Adjusts font size for better readability on small screens */
     }
 }
+
+
+
+
+
+
 
 
 
