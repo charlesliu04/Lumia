@@ -10,6 +10,7 @@ body {
     opacity: 1;
 }
 
+
 body, html {
     margin: 0;
     padding: 0;
@@ -19,33 +20,39 @@ body, html {
 }
 
 #main-header {
-    background-color: #fff;
-    color: black;
-    padding: 0.1rem 0;
     position: fixed;
     top: 0;
     width: 100%;
+    padding: 0.1rem 0; 
+    background-color: transparent;
     z-index: 10;
     transition: background-color 0.3s, color 0.3s;
+    color: white;
+}
+
+#main-header.scrolled {
+    background-color: #fff;
+    color: black;
 }
 
 #main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 2rem; /* Adjusted horizontal padding */
     max-width: 1200px;
     margin: 0 auto;
 }
 
+
 .logo-container,
 .social-media-container {
-    flex: 1;
-    text-align: center;
+    flex: 1; /* Ensures equal width on both sides */
+    text-align: center; /* Centers the content */
 }
 
 #main-nav {
-    flex: 2;
+    flex: 2; /* Allocates twice the space for navigation */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,13 +62,22 @@ body, html {
 #main-header nav a {
     font-family: 'Wix Madefor Text', serif;
     font-weight: 700;
-    color: black;
+    color: white;
     transition: color 0.3s;
+}
+
+#main-header:hover {
+    background-color: #fff;
+}
+
+#main-header:hover h1, 
+#main-header:hover nav a {
+    color: black;
 }
 
 nav#main-nav a {
     padding: 0 1rem;
-    color: inherit;
+    color: inherit; /* Ensures the anchor tag inherits the color from the parent */
     text-decoration: none;
 }
 
@@ -73,10 +89,11 @@ nav#main-nav a {
 #main-nav a::after {
     content: '';
     position: absolute;
-    bottom: -1.4px;
+    bottom: -1.4px; /* Lower the underline */
     left: 50%;
     transform: translateX(-50%) scaleX(0);
-    width: 65%;
+    transform-origin: center;
+    width: 65%; /* Reduce the maximum width of the underline */
     height: 2px;
     background-color: black;
     transition: transform 0.3s ease;
@@ -85,6 +102,7 @@ nav#main-nav a {
 #main-nav a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
+
 
 .social-media a {
     padding: 0 0.5rem;
@@ -95,102 +113,104 @@ nav#main-nav a {
     height: 24px;
 }
 
-main {
-    padding-top: 6rem; /* Adjusted top padding for more space */
+#hero {
+    min-height: 100vh;
+    background: url('photos/free.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
 }
 
-.section-header {
-    color: #003366; /* Set the color to dark blue */
-    font-size: 2rem; /* Increase the font size */
-    text-align: center; /* Center-align the text */
-    margin-bottom: 1rem; /* Add some bottom margin for spacing */
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-
-#services-page .container {
-    max-width: 1200px;
-    margin: 0 auto; /* Center the content */
-}
-
-.service-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 2rem 0;
-}
-
-.intro-text {
-    text-align: center; /* Centers the text horizontally within the element */
-}
-
-.service-item {
+#hero .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space out items */
-    background-color: #f4f4f4;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: left;
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 2rem;
-    box-sizing: border-box;
-    height: 100%; /* Set a height to fill container */
+    justify-content: center;
+    align-items: center; /* Center align the items horizontally */
 }
 
-.service-item h3 {
-    align-self: center; /* Center the title horizontally */
-    margin-bottom: 1rem; /* Space below the title */
+#hero .hero-content {
+    position: relative;
+    z-index: 2; /* Higher than the overlay */
+    min-height: 200px; /* Adjust based on the maximum expected size of the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    align-items: center; /* Centers the content horizontally */
 }
 
-.service-item p {
-    align-self: start; /* Align paragraph to the start */
-    width: 100%; /* Paragraph takes full width */
-    margin-bottom: 2rem; /* Space above the 'Learn More' button */
+#about {
+    padding: 4rem 0;
+    background-color: #ffffff;
+    color: #000;
 }
 
-.service-icon {
-    max-width: 50px; /* Adjust this value to make the image smaller */
-    height: auto; /* Maintains the aspect ratio */
-    margin: 0 auto; /* Centers the image horizontally */
-    display: block; /* Ensures the image is a block-level element */
-}
-
-.service-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out, opacity 0.7s ease-in-out;
-    padding: 0 100px;
-    opacity: 0;
-}
-.service-details.visible {
-    max-height: 200px; 
-    padding-top: 10vh;
-    opacity: 1;
-}
-
-.learn-more-btn {
-    align-self: center; /* Center the button horizontally */
-    margin-top: auto; /* Push the button to the bottom */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    border: 1px solid transparent; /* Sleek border style */
-    padding: 0.3rem 0.6rem; /* Minimal padding for a very small button */
-    font-size: 0.75rem; /* Smaller font size */
-    border-radius: 20px; /* Soft rounded edges for small button */
-    cursor: pointer; /* Cursor indicates a clickable button */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 0.5px; /* Maintain letter spacing */
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Smaller shadow for a subtle effect */
-}
-
-.learn-more-btn:hover, .learn-more-btn:focus {
-    background-color: #0056b3; /* Darker blue on hover/focus */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slightly larger shadow for hover/focus */
-    transform: translateY(-1px); /* Subtle lift on hover/focus */
+#about .container {
+    text-align: center; /* Center-align the 'Our Mission' header */
+    max-width: 1200px;
+    margin: auto; /* Center the container */
+    padding: 0 15px;
 }
 
 
+.mission-header {
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color: #003366;
+}
+
+#about .mission-columns {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.mission-column {
+    width: 30%;
+    margin-top: 1rem;
+}
+
+#about p {
+    width: 70%; /* Adjust this value as needed */
+    margin: 2rem auto; /* Top and bottom margin of 2rem, auto margins on left and right */
+    text-align: justify; /* Optional: Justify the text for better readability */
+    text-indent: 50px;
+}
+
+
+@media (max-width: 1024px) {
+    .mission-column {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-column {
+        width: 100%;
+    }
+}
+
+
+
+
+
+#about h2, #about p {
+    margin-bottom: 1rem;
+}
 
 footer {
     background: #ffffff;
@@ -200,9 +220,199 @@ footer {
     font-size: 0.6em;
 }
 
+main {
+    padding-top: 4rem;
+}
+
+#main-header.scrolled {
+    background-color: #fff; /* White background */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#main-header.scrolled h1,
+#main-header.scrolled nav a {
+    color: black; /* Black text color */
+    transition: color 0.3s;
+}
+
+#services {
+    padding: 50px 0;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px; /* Adjust as necessary */
+    margin: auto; /* Centers the container */
+}
+
+.services-intro {
+    flex-basis: 30%; /* Adjust as necessary */
+    margin-right: 40px; /* Adjust the spacing between columns */
+}
+
+.services-list {
+    flex-basis: 70%;
+}
+
+.service-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Spacing between rows */
+}
+
+.service-item {
+    flex-basis: calc(50% - 10px); /* Adjust the width and spacing between service items */
+    background: #f9f9f9;
+    color:#000;
+    transition: background-color 0.3s, color 0.3s; 
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-item:hover {
+    background: #003366; /* Dark blue background on hover */
+    color: #fff; /* White text on hover */
+}
+
+.service-item:hover h3 {
+    color: #fff; /* White text on hover */
+}
+
+
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-intro,
+    .services-list {
+        flex-basis: 100%;
+    }
+
+    .service-row {
+        flex-direction: column;
+    }
+
+    .service-item {
+        flex-basis: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+
+.all-services-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px; /* Adjust as needed */
+    cursor: pointer; /* Indicates the element is clickable */
+}
+
+.all-services-text {
+    font-size: 1rem; /* Adjust to match the design */
+    font-weight: bold; /* Bold font */
+    margin-right: 10px; /* Space between text and arrow */
+    color: #000; /* Color of the text */
+    transition: transform 0.3s ease; /* Transition for moving text */
+}
+
+.service-arrow {
+    display: inline-block;
+    margin-left: 10px; /* Space before animation starts */
+    transition: transform 0.3s ease; /* Animation effect duration and style */
+}
+
+.service-arrow img {
+    width: 40px;
+    height: 40px;
+    height: auto;
+    display: block; /* Ensures that img tag behaves like a block element for transitions */
+}
+
+/* CSS for hover effect */
+.all-services-link:hover .service-arrow {
+    transform: translateX(10px); /* Moves the arrow 10px to the right on hover */
+}
+
+.all-services-link:hover .all-services-text {
+    transform: translateX(5px); /* Optional: Moves the text slightly to the right on hover */
+}
+
+
+#welcome-text {
+    z-index: 3; /* Ensures it's above the overlay */
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    font-size: 3vw; /* Adjust based on your design needs */
+    min-height: 100px; /* Set a minimum height to accommodate the text */
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+}
+
+
+/* Change the section header to dark blue */
+.services-intro h2 {
+    color: #003366; /* This is the hex code for a dark blue color */
+}
+
+/* Change the service titles to dark blue */
+.service-item h3 {
+    color: #003366; /* Apply the same dark blue color to all h3 elements within service-item */
+}
+
+.service-item .service-icon {
+    width: 24px !important; /* Forces the width, even if other styles have higher specificity */
+    height: auto; /* Maintains the aspect ratio */
+    margin-bottom: 0.5rem; /* Space between icon and title */
+    display: block; /* Makes sure the image is a block-level element */
+}
+
+.icon-hide {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+#mentee-landings {
+    background-color: #fff; /* Optional: Adjust background color if needed */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#mentee-landings h2 {
+    color: #003366; /* Dark blue, adjust if you have a different theme */
+    margin-bottom: 20px;
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center logos horizontally */
+    align-items: center; /* Center logos vertically */
+    gap: 1rem;
+}
+
+.logo-grid img {
+    width: 120px; /* Uniform width for all logos */
+    height: 80px; /* Uniform height for all logos */
+    object-fit: contain; /* Ensures that logos are scaled correctly within the dimensions */
+}
+
+
+
 @media (max-width: 768px) {
     body, html {
         font-size: 14px; /* Adjust base font size for better legibility */
+    }
+
+    .services-container,
+    #about .container,
+    #hero .container {
+        padding: 0 10px; /* Reduce padding on smaller screens */
     }
 
     #main-header .container {
@@ -228,32 +438,33 @@ footer {
         white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
     }
 
-
-    .section-header {
-        font-size: 1.5rem; /* Larger font size for readability */
+    #welcome-text {
+        font-size: 3em; /* Increase font size for smaller screens */
     }
 
-    .service-list {
-        display: grid;
-        grid-template-columns: 1fr; /* Stack services in a single column */
-        gap: 10px; /* Reduce gap to save space */
+    #hero .hero-content {
+        font-size: 0.75em; /* Increase font size for smaller screens */
     }
 
-    .service-item {
-        padding: 10px; /* Reduce padding inside service items */
-        font-size: 0.8rem; /* Adjust font size for readability */
+    .mission-column {
+        width: 45%; /* Increase width to keep columns side by side longer */
+        margin-top: 1rem;
+    }
+   
+  
+    .logo-grid {
+        padding: 0 20px; /* Adds horizontal padding to prevent logos from touching the screen edges */
+        justify-content: center; /* Ensures logos remain centered despite the padding */
     }
 
-    .learn-more-btn {
-        padding: 0.5rem; /* Increase padding for easier interaction */
-        font-size: 1rem; /* Increase font size for visibility */
-    }
-
-    .intro-text {
-        padding: 0 20px; /* Adds horizontal padding to prevent text from spanning side to side */
-        text-align: center; /* Ensures the text is centered, maintaining a tidy layout */
-        font-size: 1rem; /* Adjusts font size for better readability on small screens */
+    .logo-grid img {
+        width: 100px; /* Optionally adjust the size of the logos if necessary */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px; /* Ensure some space between logos for better separation */
     }
 }
+
+
+
 
 
