@@ -65,7 +65,6 @@ nav#main-nav a {
     text-decoration: none;
 }
 
-
 #main-nav a {
     position: relative;
     overflow: hidden;
@@ -88,7 +87,6 @@ nav#main-nav a {
     transform: translateX(-50%) scaleX(1);
 }
 
-
 .social-media a {
     padding: 0 0.5rem;
 }
@@ -96,83 +94,84 @@ nav#main-nav a {
 .social-media img {
     width: 24px;
     height: 24px;
+    object-fit: contain; /* Ensures the image fits within the container */
 }
 
 main {
     padding-top: 6rem; /* Increased top padding to create more space below the header */
 }
 
+.team-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.team-photo img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Set a smaller max-width */
+    margin: 0 auto;
+}
+
 .profiles-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Allows profiles to wrap on smaller screens */
+    flex-direction: column;
+    align-items: center;
     gap: 20px; /* Adjust this value to increase/decrease space between the profiles */
     margin: 0 auto; /* Centers the profiles container within the main container */
     max-width: 1200px; /* Adjust this value based on your layout's max width */
 }
 
 .profile {
-    flex-basis: calc(50% - 10px); /* Subtracts the gap from the total width */
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px; /* Adds space below each profile */
+    width: 100%;
+    padding: 2rem;
     box-sizing: border-box;
 }
 
+.light-gray-bg {
+    background-color: #f5f5f5;
+}
+
+.white-bg {
+    background-color: #ffffff;
+}
+
+.profile-img-wrapper {
+    flex: 1;
+    width: 200px;
+    height: 300px; /* Adjust height for rectangle */
+    margin: 0 2rem;
+    overflow: hidden; /* Hide any overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure images fit well within their container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .profile-info {
-    width: 70%; /* Adjust this value as needed */
-    margin: 2rem auto; /* Top and bottom margin of 2rem, auto margins on left and right */
-    text-align: justify; /* Optional: Justify the text for better readability */
-    
+    flex: 2;
+    text-align: left;
 }
 
 .profile-info h3 {
     color: #003366;
 }
 
-#profiles .container .profile:last-child {
-    margin-right: 0;
-}
-
-@media (max-width: 768px) {
-    .profile {
-        width: 100%; /* Full width for smaller screens */
-        margin-right: 0;
-        padding: 20px;
-    }
-    .profile-img-wrapper {
-        width: 100%; /* Full width images on smaller screens */
-        height: auto; /* Adjust height automatically */
-    }
-}
-
-.profile-img-wrapper {
-    width: 300px; /* Set a fixed width for the container */
-    height: 300px; /* Set a fixed height for the container */
-    margin: 0 auto 20px; /* Center the wrapper and add margin below */
-    overflow: hidden; /* Hide overflow */
-    display: flex; /* Center the image within the wrapper */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    /* No background color needed if you don't want the gray background */
-}
-
-.profile img {
-    width: 100%; /* Image will fill the wrapper's width */
-    height: 100%; /* Image will fill the wrapper's height */
-    object-fit: cover; /* Cover the container, will be cropped to fit */
-}
-
-
-
-#profiles .container .profile:last-child {
-    margin-right: 10px; /* Adjust the right margin to match the other profiles */
-}
-
 .profile p {
-    color: #000000
+    color: #000000;
 }
 
 .profile p.bio {
@@ -186,6 +185,51 @@ footer {
     text-align: center;
     padding: 1rem 0;
     font-size: 0.6em;
+}
+
+.team-description {
+    font-size: 1.1em;
+    color: #333;
+    margin: 1rem 0;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add this rule to style the fun fact */
+.fun-fact {
+    font-size: 0.9em;
+    color: #007acc; /* Blue color for fun fact to make it stand out */
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .team-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .team-photo,
+    .team-description {
+        flex: 1 1 100%;
+    }
+    .team-photo img {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-img-wrapper {
+        margin: 0 0 2rem 0;
+        width: 100px;
+        height: 150px; /* Maintain rectangle aspect ratio on small screens */
+    }
 }
 
 @media (max-width: 768px) {
@@ -215,8 +259,8 @@ footer {
         text-align: center; /* Center the text within each link */
         white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
     }
-
 }
+
 
 
 
